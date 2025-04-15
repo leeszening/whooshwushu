@@ -97,6 +97,20 @@
       text-align: center;
     }
 
+    .cover-section .logo {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .cover-section .logo {
+        max-width: 250px;
+      }
+    }
+
     .cover-section h2 {
       font-size: 41px;
       font-weight: 400;
@@ -153,6 +167,18 @@
       border: none;
     }
 
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media screen and (max-width: 768px) {
       .cover-section h1.title {
         font-size: 64px;
@@ -171,16 +197,6 @@
       .top-nav {
         justify-content: flex-start;
       }
-
-      .cover-section .logo {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease;
-}
-     
-}
     }
   </style>
   <script>
@@ -221,13 +237,13 @@
     <a href="#section12">Booking</a>
   </div>
 
-<section class="cover-section" id="section1">
-  <img src="logo.png" alt="Whoosh Logo" class="logo" />
-  <h2>Elite Performance Team</h2>
-  <h1 class="title">Whoosh</h1>
-  <h1 class="subtitle">Wushu</h1>
-</section>
-
+  <section class="cover-section" id="section1">
+    <img src="logo.png" alt="Whoosh Wushu Logo" class="logo" />
+    <h2>Elite Performance Team</h2>
+    <h1 class="title">Whoosh</h1>
+    <h1 class="subtitle">Wushu</h1>
+  </section>
+  
   <section id="section2">
     <h2>About Whoosh Wushu Center</h2>
     <p>Established in May 2023, Whoosh Wushu Center is a dynamic martial arts training and performance team based in Cheras Selatan 118. With over a decade of experience, our performers blend traditional and modern Wushu techniques. We have delivered impressive performances in more than 10 large-scale events and many smaller showcases.</p>
