@@ -171,6 +171,18 @@
       .top-nav {
         justify-content: flex-start;
       }
+
+      .cover-section .logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
     }
   </style>
   <script>
@@ -211,11 +223,12 @@
     <a href="#section12">Booking</a>
   </div>
 
-  <section class="cover-section" id="section1">
-    <h2>Elite Performance Team</h2>
-    <h1 class="title">Whoosh</h1>
-    <h1 class="subtitle">Wushu</h1>
-  </section>
+<section class="cover-section" id="section1">
+  <img src="logo.png" alt="Whoosh Logo" class="logo" />
+  <h2>Elite Performance Team</h2>
+  <h1 class="title">Whoosh</h1>
+  <h1 class="subtitle">Wushu</h1>
+</section>
 
   <section id="section2">
     <h2>About Whoosh Wushu Center</h2>
