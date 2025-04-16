@@ -63,7 +63,7 @@
       left: -250px;
       width: 250px;
       height: 100vh;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(179, 0, 0, 0.6));
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(179, 0, 0, 0.6));
       backdrop-filter: blur(6px);
       transition: left 0.3s ease;
       padding: 1rem;
@@ -98,31 +98,35 @@
     }
 
     .cover-section {
-      position: relative;
-      background-image: url('whoosh11.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
-      height: 100vh;
-    }
+  position: relative;
+  background-image: url('assets/cover.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  z-index: 0;
+}
 
-    .cover-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-      z-index: 0;
-    }
+.cover-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
 
-    .cover-section-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
+.cover-section .content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
 
     .logo {
       width: 150px;
