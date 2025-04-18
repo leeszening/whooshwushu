@@ -73,65 +73,21 @@
       color: #ff3333;
     }
 
-  section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-in-out;
-    }
-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .core-values {
+    section {
+      position: relative;
+      min-height: 100vh;
+      padding: 100px 20px 50px;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 20px;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.6s ease-in-out;
     }
 
-    .core-values img {
-      max-width: 300px;
-      border-radius: 10px;
-    }
-
-    .highlight-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .highlight-section .text {
-      flex: 1 1 50%;
-    }
-
-    .highlight-section .video {
-      flex: 1 1 50%;
-    }
-
-    .why-us {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .why-us img {
-      max-width: 300px;
-      border-radius: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-    
     .cover-section {
       background-image: url('whoosh11.jpg');
     }
@@ -304,7 +260,7 @@ section.visible {
     <p>Established in May 2023, Whoosh Wushu Center is a dynamic martial arts training and performance team based in Cheras Selatan 118. With over a decade of experience, our performers blend traditional and modern Wushu techniques. We have delivered impressive performances in more than 10 large-scale events and many smaller showcases.</p>
   </section>
 
-  <section id="section3" class="image-section" class="core-values fade-in" style="background-image: url('whoosh3.jpg');">
+  <section id="section3" class="image-section" style="background-image: url('whoosh3.jpg');">
     <h2>Our Core Values</h2>
     <ul>
       <li>Fusion of strength, artistry, and combat precision</li>
@@ -384,3 +340,6 @@ section.visible {
     <p>Email: <a href="mailto:whooshwushu@gmail.com">whooshwushu@gmail.com</a></p>
   </footer>
 </body>
+
+
+
