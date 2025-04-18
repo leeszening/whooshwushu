@@ -73,21 +73,65 @@
       color: #ff3333;
     }
 
-    section {
-      position: relative;
-      min-height: 100vh;
-      padding: 100px 20px 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-image 0.6s ease-in-out;
+  section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .core-values {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .core-values img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    .highlight-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .highlight-section .text {
+      flex: 1 1 50%;
+    }
+
+    .highlight-section .video {
+      flex: 1 1 50%;
+    }
+
+    .why-us {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .why-us img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+    
     .cover-section {
       background-image: url('whoosh11.jpg');
     }
@@ -219,82 +263,6 @@
         });
       }
     });
-
-    import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-
-const FadeIn = ({ children }: { children: React.ReactNode }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
-  >
-    {children}
-  </motion.div>
-);
-
-export default function Component() {
-  return (
-    <div className="space-y-10 p-6 md:p-10 bg-black text-white">
-      {/* Section 3 - Core Values */}
-      <FadeIn>
-        <section className="grid md:grid-cols-2 gap-8 items-center">
-          <img src="/core-values.jpg" alt="Core Values" className="rounded-2xl shadow-lg" />
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
-            <p className="text-lg">
-              Discipline, respect, perseverance, and continuous growth — these are the pillars of Whoosh Wushu Center. Every student learns not only martial arts but also valuable life skills.
-            </p>
-          </div>
-        </section>
-      </FadeIn>
-
-      {/* Section 10 - Highlights */}
-      <FadeIn>
-        <section className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Performance Highlights</h2>
-            <p className="text-lg mb-4">
-              From the 2025 Huang Di Ceremony to viral Teochew dance performances, our dynamic showcases blend tradition with trend.
-            </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>March 16, 2025 - 黄帝大典 performance</li>
-              <li>Teochew dance viral performance</li>
-              <li>Regular showcases across Malaysia</li>
-            </ul>
-          </div>
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe
-              src="https://www.instagram.com/p/C3Qe9YxPjNq/embed"
-              frameBorder="0"
-              allowFullScreen
-              className="w-full h-full rounded-2xl shadow-lg"
-            ></iframe>
-          </div>
-        </section>
-      </FadeIn>
-
-      {/* Section 11 - Why Us */}
-      <FadeIn>
-        <section className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Why Choose Whoosh?</h2>
-            <ul className="list-disc pl-5 space-y-3 text-lg">
-              <li>Over 10 years of performance experience</li>
-              <li>Young, passionate martial artists with style</li>
-              <li>Dynamic shows tailored for corporate & cultural events</li>
-              <li>Partnered with Menica Media Entertainment</li>
-            </ul>
-          </div>
-          <img src="/why-us.jpg" alt="Why Us" className="rounded-2xl shadow-lg" />
-        </section>
-      </FadeIn>
-    </div>
-  );
-}
   </script>
 </head>
 
@@ -336,7 +304,7 @@ export default function Component() {
     <p>Established in May 2023, Whoosh Wushu Center is a dynamic martial arts training and performance team based in Cheras Selatan 118. With over a decade of experience, our performers blend traditional and modern Wushu techniques. We have delivered impressive performances in more than 10 large-scale events and many smaller showcases.</p>
   </section>
 
-  <section id="section3" class="image-section" style="background-image: url('whoosh3.jpg');">
+  <section id="section3" class="image-section" class="core-values fade-in" style="background-image: url('whoosh3.jpg');">
     <h2>Our Core Values</h2>
     <ul>
       <li>Fusion of strength, artistry, and combat precision</li>
