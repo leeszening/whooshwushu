@@ -47,6 +47,18 @@
       border-radius: 2px;
     }
 
+    /* Top Navigation (Burger Menu Fixed) */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.8); /* Optional: Adds a subtle background for visibility */
+      padding: 10px;
+    }
+
+  
     /* Side Navigation */
     .side-nav {
       position: fixed;
@@ -216,8 +228,25 @@
       text-decoration: underline;
     }
 
+    /* Footer Links (T&C and Privacy Policy) */
     .footer-links {
-      margin-top: 10px;
+      margin-top: 20px; /* Increased spacing for separation */
+      font-size: 0.75em; /* Smaller font size for T&C and Privacy Policy */
+      color: #999; /* Lighter color to differentiate */
+    }
+    
+    .footer-links a {
+      color: #fdd835;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Ensure footer content is clearly separated */
+    .footer p {
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -437,26 +466,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p><strong>Whoosh Wushu Center</strong></p>
-    <p>
-      28-1, Jalan Tengah Cheras Selatan 118, Taman Sri Indah, 43200 Cheras,
-      Selangor
-    </p>
-    <p>
-      <a href="https://www.instagram.com/whoosh_wushu" target="_blank"
-        >Instagram: @whoosh_wushu</a
-      >
-    </p>
-    <p>
-      Email: <a href="mailto:whooshwushu@gmail.com">whooshwushu@gmail.com</a>
-    </p>
-    <div class="footer-links">
-      <a href="#terms">Terms & Conditions</a> |
-      <a href="#privacy">Privacy Policy</a>
-    </div>
-    <p style="margin-top: 10px;">© 2025 · WHOOSH WUSHU · All rights reserved.</p>
-  </footer>
+    <footer class="footer">
+      <p><strong>Whoosh Wushu Center</strong></p>
+      <p>28-1, Jalan Tengah Cheras Selatan 118, Taman Sri Indah, 43200 Cheras, Selangor</p>
+      <p><a href="https://www.instagram.com/whoosh_wushu" target="_blank">Instagram: @whoosh_wushu</a></p>
+      <p>Email: <a href="mailto:whooshwushu@gmail.com">whooshwushu@gmail.com</a></p>
+      <div class="footer-links">
+        <a href="#terms">Terms & Conditions</a> | <a href="#privacy">Privacy Policy</a>
+      </div>
+      <p style="margin-top: 20px;">© 2025 · WHOOSH WUSHU · All rights reserved.</p>
+    </footer>
 
   <script>
     // Initialize navigation toggle on DOM load
