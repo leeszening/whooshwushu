@@ -88,6 +88,7 @@
     }
 
     section {
+      position: relative;
       min-height: 100vh;
       padding: 100px 20px 50px;
       display: flex;
@@ -95,34 +96,32 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-    }
-
-    .cover-section {
-      position: relative;
-      background-image: url('whoosh11.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: #fff;
-      height: 100vh;
-}
+    }
 
-.cover-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 0;
-}
+    .cover-section {
+      background-image: url('whoosh11.jpg');
+    }
 
-.cover-section .content {
+    .cover-section::before,
+    .image-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+    }
+
+    .cover-section .cover-section-content,
+    .image-section > * {
       position: relative;
       z-index: 1;
-      text-align: center;
-}
+    }
 
     .logo {
       width: 150px;
@@ -138,6 +137,7 @@
         opacity: 0;
         transform: translateY(-20px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -171,26 +171,10 @@
       letter-spacing: 5px;
     }
 
-    section.image-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 200px;  /* Increased gradient height at top */
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
-      z-index: -1;
-    }
-
-    section.image-section::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 200px;  /* Increased gradient height at bottom */
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-      z-index: -1;
+    .image-section {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     ul {
@@ -206,62 +190,7 @@
       border: none;
     }
 
-    @media screen and (max-width: 768px) {
-      .cover-section h1.title {
-        font-size: 64px;
-      }
-
-      .cover-section h2 {
-        font-size: 28px;
-        letter-spacing: 3px;
-      }
-
-      .cover-section h1.subtitle {
-        font-size: 24px;
-        letter-spacing: 2px;
-      }
-
-      .top-nav {
-        justify-content: flex-start;
-      }
-
-     .image-section {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.image-section::before,
-.image-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  z-index: 2;
-}
-
-.image-section::before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
-}
-
-.image-section::after {
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-}
-
-.image-section > * {
-  position: relative;
-  z-index: 3;
-}
-
-      .footer {
+    .footer {
       background-color: #222;
       color: #fff;
       padding: 40px 20px;
@@ -281,15 +210,31 @@
     .footer p {
       margin: 10px 0;
     }
+
     .image-section h2,
     .image-section p,
     .image-section ul,
     .image-section li,
     .cover-section h1,
     .cover-section h2 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
- }
+
+    @media screen and (max-width: 768px) {
+      .cover-section h1.title {
+        font-size: 64px;
+      }
+
+      .cover-section h2 {
+        font-size: 28px;
+        letter-spacing: 3px;
+      }
+
+      .cover-section h1.subtitle {
+        font-size: 24px;
+        letter-spacing: 2px;
+      }
+    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -304,6 +249,7 @@
     });
   </script>
 </head>
+
 <body>
   <div class="top-nav">
     <div id="burger-menu">
