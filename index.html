@@ -42,7 +42,7 @@
     .burger-icon {
       width: 25px;
       height: 3px;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: #fff; 
       margin: 5px 0;
       border-radius: 2px;
     }
@@ -54,7 +54,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0);
+      background: transparent; 
       padding: 10px;
     }
 
@@ -62,7 +62,7 @@
     /* Side Navigation */
     .side-nav {
       position: fixed;
-      top: 60px;
+      top: 0;
       left: -250px;
       width: 250px;
       height: 100vh;
@@ -230,8 +230,8 @@
 
     /* Footer Links (T&C and Privacy Policy) */
     .footer-links {
-      margin-top: 20px; /* Increased spacing for separation */
-      font-size: 0.75em; /* Smaller font size for T&C and Privacy Policy */
+      margin-top: 10px; 
+      font-size: 0.65em; 
       color: #999; /* Lighter color to differentiate */
     }
     
@@ -244,6 +244,11 @@
       text-decoration: underline;
     }
 
+    /* Reserved Rights */
+    .footer p[style*="margin-top"] {
+      margin-top: 10px; /* Tighter spacing */
+      font-size: 0.65em; /* Smaller font size */
+    }
   </style>
 </head>
 
