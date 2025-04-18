@@ -219,6 +219,82 @@
         });
       }
     });
+
+    import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+const FadeIn = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    {children}
+  </motion.div>
+);
+
+export default function Component() {
+  return (
+    <div className="space-y-10 p-6 md:p-10 bg-black text-white">
+      {/* Section 3 - Core Values */}
+      <FadeIn>
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <img src="/core-values.jpg" alt="Core Values" className="rounded-2xl shadow-lg" />
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
+            <p className="text-lg">
+              Discipline, respect, perseverance, and continuous growth — these are the pillars of Whoosh Wushu Center. Every student learns not only martial arts but also valuable life skills.
+            </p>
+          </div>
+        </section>
+      </FadeIn>
+
+      {/* Section 10 - Highlights */}
+      <FadeIn>
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Performance Highlights</h2>
+            <p className="text-lg mb-4">
+              From the 2025 Huang Di Ceremony to viral Teochew dance performances, our dynamic showcases blend tradition with trend.
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>March 16, 2025 - 黄帝大典 performance</li>
+              <li>Teochew dance viral performance</li>
+              <li>Regular showcases across Malaysia</li>
+            </ul>
+          </div>
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.instagram.com/p/C3Qe9YxPjNq/embed"
+              frameBorder="0"
+              allowFullScreen
+              className="w-full h-full rounded-2xl shadow-lg"
+            ></iframe>
+          </div>
+        </section>
+      </FadeIn>
+
+      {/* Section 11 - Why Us */}
+      <FadeIn>
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Why Choose Whoosh?</h2>
+            <ul className="list-disc pl-5 space-y-3 text-lg">
+              <li>Over 10 years of performance experience</li>
+              <li>Young, passionate martial artists with style</li>
+              <li>Dynamic shows tailored for corporate & cultural events</li>
+              <li>Partnered with Menica Media Entertainment</li>
+            </ul>
+          </div>
+          <img src="/why-us.jpg" alt="Why Us" className="rounded-2xl shadow-lg" />
+        </section>
+      </FadeIn>
+    </div>
+  );
+}
   </script>
 </head>
 
