@@ -61,7 +61,6 @@
       padding: 10px;
     }
 
-  
     /* Side Navigation */
     .side-nav {
       position: fixed;
@@ -102,7 +101,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -196,9 +194,90 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
+    /* Specific Section Alignments */
+    #section2 { /* About Whoosh Wushu Center - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section2 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section3 { /* Our Core Values - Middle Top */
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+
+    #section4 { /* Lion Dance - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section4 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section5 { /* Weaponry & Combat - Middle Bottom */
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+    }
+
+    #section6 { /* Archery Displays - Align Right */
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    #section6 > * { /* Limit width for right-aligned content */
+      max-width: 50%;
+    }
+
+    #section7 { /* Theatrical Martial Arts - Align Right */
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    #section7 > * { /* Limit width for right-aligned content */
+      max-width: 50%;
+    }
+
+    #section8 { /* Modern Acrobatics - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section8 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section9 { /* Taichi Performances - Middle Top */
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+
+    #section10 { /* Highlights & Collaborations - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section10 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section12 { /* Booking & Customization - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section12 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
     /* Lists */
     ul {
-      text-align: left;
       max-width: 800px;
     }
 
@@ -235,7 +314,7 @@
     .footer-links {
       margin-top: 15px; 
       font-size: 0.65em; 
-      color: #999; /* Lighter color to differentiate */
+      color: #999;
     }
     
     .footer-links a {
@@ -249,8 +328,8 @@
 
     /* Reserved Rights */
     .footer p[style*="margin-top"] {
-      margin-top: 5px; /* Tighter spacing */
-      font-size: 0.65em; /* Smaller font size */
+      margin-top: 5px;
+      font-size: 0.65em;
     }
   </style>
 </head>
@@ -471,16 +550,16 @@
   </section>
 
   <!-- Footer -->
-    <footer class="footer">
-      <p><strong>Whoosh Wushu Center</strong></p>
-      <p>28-1, Jalan Tengah Cheras Selatan 118, Taman Sri Indah, 43200 Cheras, Selangor</p>
-      <p><a href="https://www.instagram.com/whoosh_wushu" target="_blank">Instagram: @whoosh_wushu</a></p>
-      <p>Email: <a href="mailto:whooshwushu@gmail.com">whooshwushu@gmail.com</a></p>
-      <div class="footer-links">
-        <a href="#terms">Terms & Conditions</a> | <a href="#privacy">Privacy Policy</a>
-      </div>
-      <p style="margin-top: 20px;">© 2025 · WHOOSH WUSHU · All rights reserved.</p>
-    </footer>
+  <footer class="footer">
+    <p><strong>Whoosh Wushu Center</strong></p>
+    <p>28-1, Jalan Tengah Cheras Selatan 118, Taman Sri Indah, 43200 Cheras, Selangor</p>
+    <p><a href="https://www.instagram.com/whoosh_wushu" target="_blank">Instagram: @whoosh_wushu</a></p>
+    <p>Email: <a href="mailto:whooshwushu@gmail.com">whooshwushu@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="#terms">Terms & Conditions</a> | <a href="#privacy">Privacy Policy</a>
+    </div>
+    <p style="margin-top: 20px;">© 2025 · WHOOSH WUSHU · All rights reserved.</p>
+  </footer>
 
   <script>
     // Initialize navigation toggle on DOM load
