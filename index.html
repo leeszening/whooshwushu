@@ -10,7 +10,334 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Burger Menu */
+    .burger-menu {
+      cursor: pointer;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    .burger-menu:hover {
+      transform: scale(1.1);
+    }
+
+    .burger-icon {
+      width: 25px;
+      height: 3px;
+      background-color: #fff; 
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    /* Top Navigation (Burger Menu Fixed) */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent; 
+      padding: 10px;
+    }
+
+    /* Side Navigation */
+    .side-nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+      backdrop-filter: blur(6px);
+      transition: left 0.3s ease;
+      padding: 1rem;
+      z-index: 999;
+      box-shadow: 2px 0 10px rgba(255, 0, 0, 0.2);
+    }
+
+    .side-nav.show {
+      left: 0;
+    }
+
+    .side-nav a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin: 1rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .side-nav a:hover {
+      color: #ff3333;
+    }
+
+    /* Section Styles */
+    section {
+      position: relative;
+      min-height: 100vh;
+      padding: 100px 20px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.6s ease-in-out;
+    }
+
+    /* Cover Section */
+    .cover-section {
+      background-image: url("whoosh11.jpg");
+    }
+
+    .cover-section::before,
+    .image-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+    }
+
+    .cover-section-content,
+    .image-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Logo */
+    .logo {
+      width: 150px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Cover Section Typography */
+    .cover-section h2 {
+      font-size: clamp(20px, 4vw, 39px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .cover-section .title {
+      font-size: clamp(55px, 12vw, 188px);
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .cover-section .subtitle {
+      font-size: clamp(18px, 3vw, 35px);
+      font-weight: 700;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 15px;
+    }
+
+    /* Image Section */
+    .image-section {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .image-section h2,
+    .image-section p,
+    .image-section ul,
+    .image-section li,
+    .cover-section h1,
+    .cover-section h2 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Specific Section Alignments */
+    #section1 {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+    #section2 { /* About Whoosh Wushu Center - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section2 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section3 { /* Our Core Values - Middle Top */
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+
+    #section4 { /* Lion Dance - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section4 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+      left-padding: 50px
+    }
+
+    #section5 { /* Weaponry & Combat - Middle Bottom */
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+    }
+
+    #section6 { /* Archery Displays - Align Right */
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    #section6 > * { /* Limit width for right-aligned content */
+      max-width: 50%;
+    }
+
+    #section7 { /* Theatrical Martial Arts - Align Right */
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    #section7 > * { /* Limit width for right-aligned content */
+      max-width: 50%;
+    }
+
+    #section8 { /* Modern Acrobatics - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section8 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section9 { /* Taichi Performances - Middle Top */
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+
+    #section10 { /* Highlights & Collaborations - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section10 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    #section12 { /* Booking & Customization - Align Left */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #section12 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
+    }
+
+    /* Lists */
+    ul {
+      max-width: 800px;
+    }
+
+    /* Iframe */
+    iframe {
+      width: 100%;
+      max-width: 400px;
+      height: 480px;
+      margin-top: 20px;
+      border: none;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px 20px;
+      background-color: #111;
+      color: #ccc;
+      font-size: 0.9em;
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: #fdd835;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Links (T&C and Privacy Policy) */
+    .footer-links {
+      margin-top: 15px; 
+      font-size: 0.65em; 
+      color: #999;
+    }
+    
+    .footer-links a {
+      color: #fdd835;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Reserved Rights */
+    .footer p[style*="margin-top"] {
+      margin-top: 5px;
+      font-size: 0.65em;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,7 +347,6 @@
       class="burger-menu"
       id="burger-menu"
       aria-label="Toggle navigation menu"
-      aria-expanded="false"
     >
       <div class="burger-icon"></div>
       <div class="burger-icon"></div>
@@ -30,6 +356,7 @@
 
   <!-- Side Navigation -->
   <nav id="side-nav" class="side-nav">
+    <p> </p>
     <a href="#section1">Intro</a>
     <a href="#section2">What is Whoosh</a>
     <a href="#section3">What We Represent</a>
@@ -45,9 +372,9 @@
   </nav>
 
   <!-- Sections -->
-  <section class="section section--overlay cover-section section--center" id="section1" style="background-image: url('whoosh11.jpg');">
-    <div class="section__content">
-      <img src="logo.png" alt="Whoosh Wushu Logo" class="logo" loading="lazy" />
+  <section class="cover-section" id="section1">
+    <div class="cover-section-content">
+      <img src="logo.png" alt="Whoosh Wushu Logo" class="logo" />
       <h2>Elite Performance Team</h2>
       <h1 class="title">Whoosh</h1>
       <h1 class="subtitle">Wushu</h1>
@@ -55,157 +382,149 @@
   </section>
 
   <section
-    class="section section--overlay section--left"
     id="section2"
+    class="image-section"
     style="background-image: url('whoosh1.jpg');"
   >
-    <div class="section__content">
-      <h2>About Whoosh Wushu Center</h2>
-      <p>
-        Established in May 2023, Whoosh Wushu Center is a dynamic martial arts
-        training and performance team based in Cheras Selatan 118. With over a
-        decade of experience, our performers blend traditional and modern Wushu
-        techniques. We have delivered impressive performances in more than 10
-        large-scale events and many smaller showcases.
-      </p>
-    </div>
+    <h2>About Whoosh Wushu Center</h2>
+    <p>
+      Established in May 2023, Whoosh Wushu Center is a dynamic martial arts
+      training and performance team based in Cheras Selatan 118. With over a
+      decade of experience, our performers blend traditional and modern Wushu
+      techniques. We have delivered impressive performances in more than 10
+      large-scale events and many smaller showcases.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--center section--top"
     id="section3"
+    class="image-section"
     style="background-image: url('whoosh2.jpg');"
   >
-    <div class="section__content">
-      <h2>Our Core Values</h2>
-      <ul>
-        <li>Fusion of strength, artistry, and combat precision</li>
-        <li>Celebrating the heritage and evolution of Wushu</li>
-        <li>Delivering high-impact, visually stunning performances</li>
-      </ul>
-    </div>
+    <h2>Our Core Values</h2>
+    <ul>
+      <li>Fusion of strength, artistry, and combat precision</li>
+      <li>Celebrating the heritage and evolution of Wushu</li>
+      <li>Delivering high-impact, visually stunning performances</li>
+    </ul>
   </section>
 
   <section
-    class="section section--overlay section--left"
     id="section4"
+    class="image-section"
     style="background-image: url('whoosh3.jpg');"
   >
-    <div class="section__content">
-      <h2>Lion Dance</h2>
-      <p>
-        Traditional and acrobatic lion dance performances suitable for celebrations
-        and corporate events. Symbolizing prosperity, strength, and good fortune.
-        Ideal for festivals, weddings, and grand openings.
-      </p>
-    </div>
+    <h2>Lion Dance</h2>
+    <p>
+      Traditional and acrobatic lion dance performances suitable for celebrations
+      and corporate events. Symbolizing prosperity, strength, and good fortune.
+      Ideal for festivals, weddings, and grand openings.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--center section--bottom"
     id="section5"
+    class="image-section"
     style="background-image: url('whoosh4.jpg');"
   >
-    <div class="section__content">
-      <h2>Weaponry & Combat</h2>
-      <p>
-        Dynamic fight sequences using swords, spears, staffs, and bows.
-        Action-packed, precise, and narratively engaging.
-      </p>
-    </div>
+    <h2>Weaponry & Combat</h2>
+    <p>
+      Dynamic fight sequences using swords, spears, staffs, and bows.
+      Action-packed, precise, and narratively engaging.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--right"
     id="section6"
+    class="image-section"
     style="background-image: url('whoosh5.jpg');"
   >
-    <div class="section__content">
-      <h2>Archery Displays</h2>
-      <p>
-        Choreographed archery performances with dramatic formations and synchronized
-        movements. Great for cultural and fantasy-themed events.
-      </p>
-    </div>
+    <h2>Archery Displays</h2>
+    <p>
+      Choreographed archery performances with dramatic formations and synchronized
+      movements. Great for cultural and fantasy-themed events.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--right"
     id="section7"
+    class="image-section"
     style="background-image: url('whoosh6.jpg');"
   >
-    <div class="section__content">
-      <h2>Theatrical Martial Arts</h2>
-      <p>
-        We combine martial arts with storytelling, costumes, and music for an
-        immersive stage experience. Perfect for themed shows and special showcases.
-      </p>
-    </div>
+    <h2>Theatrical Martial Arts</h2>
+    <p>
+      We combine martial arts with storytelling, costumes, and music for an
+      immersive stage experience. Perfect for themed shows and special showcases.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--left"
     id="section8"
+    class="image-section"
     style="background-image: url('whoosh7.jpg');"
   >
-    <div class="section__content">
-      <h2>Modern Acrobatics</h2>
-      <p>
-        Includes flips, aerials, and cinematic stunt work. Energetic routines suited
-        for commercials, concerts, and media appearances.
-      </p>
-    </div>
+    <h2>Modern Acrobatics</h2>
+    <p>
+      Includes flips, aerials, and cinematic stunt work. Energetic routines suited
+      for commercials, concerts, and media appearances.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--center section--top"
     id="section9"
+    class="image-section"
     style="background-image: url('whoosh8.jpg');"
   >
-    <div class="section__content">
-      <h2>Taichi Performances</h2>
-      <p>
-        Graceful, meditative, and powerful movements reflecting balance and harmony.
-        Ideal for wellness events and formal ceremonies.
-      </p>
-    </div>
+    <h2>Taichi Performances</h2>
+    <p>
+      Graceful, meditative, and powerful movements reflecting balance and harmony.
+      Ideal for wellness events and formal ceremonies.
+    </p>
   </section>
 
   <section
-    class="section section--overlay section--left"
     id="section10"
+    class="image-section"
     style="background-image: url('whoosh9.jpg');"
   >
-    <div class="section__content">
-      <h2>Highlights & Collaborations</h2>
-      <p><strong>Main Partner:</strong> Menica Media Entertainment</p>
-      <p>
-        <strong
-          >March 16, 2025 – 2025《乙巳年马来西亚华侨华人恭拜轩辕黄帝大典》</strong
-        ><br />
-        A tribute event to the Yellow Emperor featuring Wushu and cultural
-        showcases.
-      </p>
-      <p>
-        <strong>Special Feature: Teochew Dance</strong><br />
-        A trending fusion of traditional dance and martial arts that mesmerized
-        audiences.
-      </p>
-      <iframe
-        src="https://www.instagram.com/p/C4-aRzQJQL9/embed"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-    </div>
+    <h2>Highlights & Collaborations</h2>
+    <p><strong>Main Partner:</strong> Menica Media Entertainment</p>
+    <p>
+      <strong
+        >March 16, 2025 – 2025《乙巳年马来西亚华侨华人恭拜轩辕黄帝大典》</strong
+      ><br />
+      A tribute event to the Yellow Emperor featuring Wushu and cultural
+      showcases.
+    </p>
+    <p>
+      <strong>Special Feature: Teochew Dance</strong><br />
+      A trending fusion of traditional dance and martial arts that mesmerized
+      audiences.
+    </p>
+    <iframe
+      src="https://www.instagram.com/p/C4-aRzQJQL9/embed"
+      allowfullscreen
+    ></iframe>
   </section>
 
-  <section class="section section--center" id="section11" style="background: #000;">
-    <div class="section__content flex-container">
+  <section id="section11" class="image-section" style="background: #000;">
+    <div
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      "
+    >
       <img
         src="whoosh10.jpg"
         alt="Why Choose Us"
-        class="why-us-image"
-        loading="lazy"
+        style="
+          max-width: 400px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        "
       />
       <ul>
         <li>✔ Experienced in traditional and modern Wushu arts</li>
@@ -217,25 +536,23 @@
   </section>
 
   <section
-    class="section section--overlay section--left"
     id="section12"
+    class="image-section"
     style="background-image: url('whoosh12.jpg');"
   >
-    <div class="section__content">
-      <h2>Booking & Customization</h2>
-      <p>Choose a show tailored to your audience and theme:</p>
-      <ul>
-        <li>✅ Corporate Functions</li>
-        <li>✅ Grand Openings</li>
-        <li>✅ Cultural Festivals</li>
-        <li>✅ Private Celebrations</li>
-        <li>✅ Stage & Film Productions</li>
-      </ul>
-      <p>
-        Performance Duration: 3–5 min | 7–10 min<br />
-        Pricing: Negotiable based on scope and requirements
-      </p>
-    </div>
+    <h2>Booking & Customization</h2>
+    <p>Choose a show tailored to your audience and theme:</p>
+    <ul>
+      <li>✅ Corporate Functions</li>
+      <li>✅ Grand Openings</li>
+      <li>✅ Cultural Festivals</li>
+      <li>✅ Private Celebrations</li>
+      <li>✅ Stage & Film Productions</li>
+    </ul>
+    <p>
+      Performance Duration: 3–5 min | 7–10 min<br />
+      Pricing: Negotiable based on scope and requirements
+    </p>
   </section>
 
   <!-- Footer -->
@@ -247,9 +564,21 @@
     <div class="footer-links">
       <a href="#terms">Terms & Conditions</a> | <a href="#privacy">Privacy Policy</a>
     </div>
-    <p class="footer-copyright">© 2025 · WHOOSH WUSHU · All rights reserved.</p>
+    <p style="margin-top: 20px;">© 2025 · WHOOSH WUSHU · All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Initialize navigation toggle on DOM load
+    document.addEventListener("DOMContentLoaded", () => {
+      const burgerMenu = document.getElementById("burger-menu");
+      const sideNav = document.getElementById("side-nav");
+
+      if (burgerMenu && sideNav) {
+        burgerMenu.addEventListener("click", () => {
+          sideNav.classList.toggle("show");
+        });
+      }
+    });
+  </script>
 </body>
 </html>
