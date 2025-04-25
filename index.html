@@ -215,49 +215,13 @@
       text-align: center;
     }
 
-    /* #section4 { /* Lion Dance - Align Left */
+    #section4 { /* Lion Dance - Align Left */
       align-items: flex-start;
-      text-align: left;
-    } */
+      text-align: center;
+    }
 
-    /* Two-Column Layout */
-    .section__columns {
-      display: flex;
-      justify-content: center; /* Center columns horizontally */
-      gap: 2rem; /* Space between columns */
-      width: 100%;
-      max-width: 1200px; /* Limit total width */
-    }
-    
-    .column {
-      flex: 1; /* Each column takes equal width */
-      min-width: 0; /* Prevent overflow */
-      padding: 1rem;
-    }
-    
-    .column--left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Center text vertically */
-      align-items: center; /* Center text horizontally */
-      text-align: center; /* Ensure text is centered */
-    }
-    
-    /* Ensure text shadow applies to column content */
-    .column--left h2,
-    .column--left p {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    }
-    
-    /* Responsive: Stack columns on smaller screens */
-    @media (max-width: 768px) {
-      .section__columns {
-        flex-direction: column;
-      }
-    
-      .column {
-        width: 100%; /* Full width on mobile */
-      }
+    #section4 > * { /* Limit width for left-aligned content */
+      max-width: 50%;
     }
 
     #section5 { /* Weaponry & Combat - Middle Bottom */
@@ -444,24 +408,17 @@
   </section>
 
   <section
-  class="section section--overlay section--center"
-  id="section4"
-  style="background-image: url('whoosh3.jpg');"
->
-  <div class="section__content section__columns">
-    <div class="column column--left">
-      <h2>Lion Dance</h2>
-      <p>
-        Traditional and acrobatic lion dance performances suitable for celebrations
-        and corporate events. Symbolizing prosperity, strength, and good fortune.
-        Ideal for festivals, weddings, and grand openings.
-      </p>
-    </div>
-    <div class="column column--right">
-      <!-- Right column, empty for now -->
-    </div>
-  </div>
-</section>
+    id="section4"
+    class="image-section"
+    style="background-image: url('whoosh3.jpg');"
+  >
+    <h2>Lion Dance</h2>
+    <p>
+      Traditional and acrobatic lion dance performances suitable for celebrations
+      and corporate events. Symbolizing prosperity, strength, and good fortune.
+      Ideal for festivals, weddings, and grand openings.
+    </p>
+  </section>
 
   <section
     id="section5"
