@@ -348,9 +348,23 @@
     width: 80%;
   }
 
-  iframe {
-    height: 300px;
-  }
+.instagram-embed-container {
+  position: relative; /* Ensure the embed is positioned relative to this container */
+  max-width: 540px; /* Match the max-width of the Instagram embed */
+  width: 100%;
+  margin: 20px 0; /* Add spacing to align with other content */
+  display: flex;
+  justify-content: flex-start; /* Align with the left-aligned content in #section10 */
+  z-index: 1; /* Ensure it stays above the background overlay */
+}
+
+/* Override Instagram embed's absolute positioning */
+.instagram-media {
+  position: static !important; /* Prevent absolute positioning from breaking layout */
+  top: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
   </style>
