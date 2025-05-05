@@ -344,28 +344,40 @@
   }
 
 .instagram-embed-container {
-  position: relative; /* Ensure the embed is positioned relative to this container */
-  max-width: 540px; /* Match the max-width of the Instagram embed */
+  position: relative;
+  max-width: 540px;
   width: 100%;
-  margin: 20px 0; /* Add spacing to align with other content */
+  margin: 20px 0;
   display: flex;
-  justify-content: flex-start; /* Align with the left-aligned content in #section10 */
-  z-index: 1; /* Ensure it stays above the background overlay */
+  justify-content: flex-start;
+  z-index: 1;
 }
 
-/* Override Instagram embed's absolute positioning */
 .instagram-media {
-  position: static !important; /* Prevent absolute positioning from breaking layout */
+  position: static !important;
   top: auto !important;
   left: auto !important;
   width: 100% !important;
   margin: 0 !important;
 }
+
 .instagram-media iframe {
   max-width: 100% !important;
   width: 100% !important;
   height: auto !important;
-  min-height: 300px; /* Adjust based on your needs */
+  min-height: 300px;
+}
+
+#section10 > *,
+#section10 .instagram-embed-container {
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  #section10 > *,
+  #section10 .instagram-embed-container {
+    max-width: 100%;
+  }
 }
   </style>
 </head>
