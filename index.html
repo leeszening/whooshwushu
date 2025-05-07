@@ -345,7 +345,7 @@
 
 .video-container {
   position: relative;
-  max-width: 400px; /* Default size for larger screens */
+  max-width: 400px;
   width: 100%;
   margin: 20px 0;
   z-index: 1;
@@ -353,24 +353,34 @@
 
 .video-container video {
   width: 100%;
+  max-height: 500px;
+  object-fit: contain;
   border-radius: 3px;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
   display: block;
 }
 
+.video-caption {
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+  margin-top: 10px;
+}
+
 #section10 > *,
 #section10 .video-container {
-  max-width: 50%; /* Default for larger screens */
+  max-width: 50%;
 }
 
 @media (max-width: 768px) {
-  #section10 > * {
-    max-width: 100%; /* Other elements can still use full width */
-  }
+  #section10 > *,
   #section10 .video-container {
-    max-width: 320px; /* Smaller size for phone screens */
-    width: 100%; /* Ensure it scales down if the screen is narrower */
-    margin: 20px auto; /* Center the video horizontally */
+    max-width: 320px; /* Phone-sized */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .video-container video {
+    max-height: 500px;
   }
 }
   </style>
@@ -517,28 +527,25 @@
     </p>
   </section>
 
-  <section
-    id="section10"
-    class="image-section"
-    style="background-image: url('whoosh9.jpg');"
-  >
-    <h2>Highlights & Collaborations</h2>
-    <p><strong>Main Partner:</strong> Menica Media Entertainment</p>
-    <p>
-      <strong
-        >March 16, 2025 – 2025《乙巳年马来西亚华侨华人恭拜轩辕黄帝大典》</strong
-      ><br />
-      A tribute event to the Yellow Emperor featuring Wushu and cultural
-      showcases.
-    </p>
-    <p>
-    <div class="video-container">
+  <section id="section10" class="image-section" style="background-image: url('whoosh9.jpg');">
+  <h2>Highlights & Collaborations</h2>
+  <p><strong>Main Partner:</strong> Menica Media Entertainment</p>
+  <p>
+    <strong>March 16, 2025 – 2025《乙巳年马来西亚华侨华人恭拜轩辕黄帝大典》</strong><br />
+    A tribute event to the Yellow Emperor featuring Wushu and cultural showcases.
+  </p>
+  <p>
+    <strong>Special Feature: Teochew Dance</strong><br />
+    A trending fusion of traditional dance and martial arts that mesmerized audiences.
+  </p>
+  <div class="video-container">
     <video controls playsinline>
       <source src="insta.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <p class="video-caption">Watch our Performace reel</p>
   </div>
-  </section>
+</section>
 
  <section
     id="section11"
