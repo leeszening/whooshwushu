@@ -345,16 +345,16 @@
 
 .video-container {
   position: relative;
-  max-width: 400px;
+  max-width: 400px; /* Unified width for all screens */
   width: 100%;
-  margin: 20px 0;
+  margin: 20px auto; /* Center the video on all screens */
   z-index: 1;
 }
 
 .video-container video {
   width: 100%;
-  max-height: 500px;
-  object-fit: contain;
+  max-height: 600px; /* Unified height cap for vertical reel */
+  object-fit: contain; /* Prevent cropping */
   border-radius: 3px;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
   display: block;
@@ -369,18 +369,20 @@
 
 #section10 > *,
 #section10 .video-container {
-  max-width: 50%;
+  max-width: 50%; /* Apply to text and video container */
 }
 
+/* Optional: Adjust text alignment for consistency */
+#section10 {
+  align-items: flex-start; /* Keep left-aligned text */
+  text-align: left;
+}
+
+/* Remove mobile-specific overrides to unify settings */
 @media (max-width: 768px) {
   #section10 > *,
   #section10 .video-container {
-    max-width: 320px; /* Phone-sized */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .video-container video {
-    max-height: 500px;
+    max-width: 50%; /* Same as desktop */
   }
 }
   </style>
