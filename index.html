@@ -269,12 +269,14 @@
       text-align: left;
     }
 
-    #section11 > * { /* Limit width for left-aligned content */
-      align-items: flex-start;
-      text-align: left;
+    #section11 {
+      align-items: flex-start; /* Align content to the left */
+      text-align: left; /* Left-align text */
+      justify-content: flex-start; /* Retain top alignment */
     }
-    #section11 > * { /* Limit width for left-aligned content */
-    max-width: 50%;
+
+    #section11 > * {
+      max-width: 50%; /* Constrain content to left 50% */
     }
     
     #section12 { /* Booking & Customization - Align Left */
