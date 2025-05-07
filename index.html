@@ -345,7 +345,7 @@
 
 .video-container {
   position: relative;
-  max-width: 380px; 
+  max-width: 400px; /* Default size for larger screens */
   width: 100%;
   margin: 20px 0;
   z-index: 1;
@@ -360,13 +360,17 @@
 
 #section10 > *,
 #section10 .video-container {
-  max-width: 40%;
+  max-width: 50%; /* Default for larger screens */
 }
 
 @media (max-width: 768px) {
-  #section10 > *,
+  #section10 > * {
+    max-width: 100%; /* Other elements can still use full width */
+  }
   #section10 .video-container {
-    max-height: 50%;
+    max-width: 320px; /* Smaller size for phone screens */
+    width: 100%; /* Ensure it scales down if the screen is narrower */
+    margin: 20px auto; /* Center the video horizontally */
   }
 }
   </style>
