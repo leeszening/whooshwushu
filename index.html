@@ -225,9 +225,9 @@
       max-width: 50%;
     }
 
-    #section5 { /* Weaponry & Combat - Middle Bottom */
-      justify-content: flex-end;
-      align-items: top;
+    #section5 { /* Weaponry & Combat - Middle top */
+      justify-content: flex-start;
+      align-items: center;
       text-align: center;
     }
 
@@ -258,8 +258,8 @@
       max-width: 50%;
     }
 
-    #section9 { /* Taichi Performances - Middle Top */
-      justify-content: flex-start;
+    #section9 { /* Taichi Performances - Middle bottom */
+      justify-content: flex-end;
       align-items: bottom;
       text-align: center;
     }
@@ -272,9 +272,11 @@
     #section11 > * { /* Limit width for left-aligned content */
       align-items: flex-start;
       text-align: left;
-      max-width: 50%;
     }
-
+    #section11 > * { /* Limit width for left-aligned content */
+    max-width: 50%;
+    }
+    
     #section12 { /* Booking & Customization - Align Left */
       align-items: flex-start;
       text-align: left;
@@ -393,7 +395,6 @@
     min-height: 70vh; /* Shorter sections */
     padding: 50px 5vw 30px; /* Reduced vertical padding */
     border: 4px solid transparent; /* Base border for border-image */
-    border-image: linear-gradient(to bottom, transparent, #ff3333 50%, #fdd835 100%) 1; /* Transparent to red to yellow */
     box-sizing: border-box; /* Ensure border doesn't increase section size */
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%); /* Fade top and bottom to black */
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%); /* Standard property */
