@@ -276,6 +276,7 @@
     #section12 { /* Booking & Customization - Align Left */
       align-items: flex-start;
       text-align: left;
+      max-width: 50%;
     }
 
     #section12 > * { /* Limit width for left-aligned content */
@@ -382,14 +383,13 @@
 @media (max-width: 768px) {
   #section10 > *,
   #section10 .video-container {
-    max-width: 50%; /* Same as desktop */
   }
 }
 
   /* Reduce section height and padding for mobile */
   @media (max-width: 768px) {
     section {
-    min-height: 60vh; /* Shorter sections */
+    min-height: 70vh; /* Shorter sections */
     padding: 50px 5vw 30px; /* Reduced vertical padding */
   }}
   </style>
