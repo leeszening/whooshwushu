@@ -229,7 +229,7 @@
       justify-content: flex-end;
       align-items: center;
       text-align: center;
-      padding-bottom:100px;
+      padding-bottom:150px;
     }
 
     #section6 { /* Archery Displays - Align Right */
@@ -260,9 +260,10 @@
     }
 
     #section9 { /* Taichi Performances - Middle bottom */
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: bottom;
       text-align: center;
+      padding-top:150px;
     }
 
     #section10 { /* Highlights & Collaborations - Align Left */
@@ -387,9 +388,8 @@
 
 /* Remove mobile-specific overrides to unify settings */
 @media (max-width: 768px) {
-  #section10 > *, #section11 > *,
-  #section10 .video-container {
-  }
+  .cover-section{
+    min-height: 80vh;
 }
 
   /* Reduce section height and padding for mobile */
