@@ -270,6 +270,8 @@
     }
 
     #section11 > * { /* Limit width for left-aligned content */
+      align-items: flex-start;
+      text-align: left;
       max-width: 50%;
     }
 
@@ -388,8 +390,11 @@
   /* Reduce section height and padding for mobile */
   @media (max-width: 768px) {
     section {
-    min-height: 70vh; /* Shorter sections */
+    min-height: 60vh; /* Shorter sections */
     padding: 50px 5vw 30px; /* Reduced vertical padding */
+    border: 4px solid transparent; /* Base border for border-image */
+    border-image: linear-gradient(to bottom, transparent, #ff3333 50%, #fdd835 100%) 1; /* Transparent to red to yellow */
+    box-sizing: border-box; /* Ensure border doesn't increase section size */
   }}
   </style>
 </head>
